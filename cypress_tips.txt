@@ -1,0 +1,14 @@
+1. Run for Windows:
+./node_modules/.bin/cypress open
+
+2. Timeout:
+cy.get('button [type="submit"]', {timeout: 1000}).click()
+
+3. Exeption for 'ResizeObserver loop limit exceeded' error (put at the beginning of the test):
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+  if (err.message.includes('ResizeObserver loop limit exceeded')) {
+    return false
+  }
+})
+
