@@ -3,8 +3,7 @@ And ID selector is a name preceded by a hash character ( #homepageHeader )
 
 
 
-
-
+          CSS SELECTORS
 CSS Descendant & Direct Descendant Combinators:
 1. Descendant ( .parent .child ) - the descendant selector matches all elements that are descendants of a specified element.
 ul li[id='fruits']
@@ -60,9 +59,8 @@ button:nth-of-type(odd) //Matches elements of a given tag type i.e. button
 
 
 
-
-
-XPATH Selectors:
+          XPATH SELECTORS:
+XPATH Selectors Types:
 1. Absolute XPath
 /html/body/div[1]/div[3]/form/input
 2. Relative XPath
