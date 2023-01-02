@@ -1,1 +1,142 @@
+Class selector is a mane preceded by full stop ( .subcategories )
+And ID selector is a name preceded by a hash character ( #homepageHeader )
 
+
+
+
+
+CSS Descendant & Direct Descendant Combinators:
+1. Descendant ( .parent .child ) - the descendant selector matches all elements that are descendants of a specified element.
+ul li[id='fruits']
+2. Direct Descendant ( .parent > child ) - the child selector selects all elements that are the children of a specified element.
+div > input
+
+CSS Adjacent & Far Sibling Combinators:
+1. Adjacent Sibiling ( .child + .sibiling )- the + combinator selects adjacent sibilings. This means that the 2nd element directly follows
+the 1st, and both share the same element.
+div + img
+2. Far Sibiling ( .child ~ .sibiling ) - child and sibiling must have the same parent.
+div ~ p
+
+CSS Combinators - Contains Both Classes:
+1. Contains Both Classes ( .class1.class2 )
+.btn.btn-primary
+.navbar.navbar-expand-lg.bg-secondary
+#contacntForm .form-control
+
+CSS Attribute Selectors:
+1. = Exact
+[value='option-1']
+2. $= Ends in
+[value$='1']
+3. ^= Begins with
+[value^='opt']
+4. *= Contains 
+[value*='tion']
+
+CSS Pseudo-Classes Combinators:
+1. :disabled
+input[name='vegetable']:disabled
+2. :enabled
+input[name='vegetable']:enabled
+3. :checked
+input[name='vegetable']:checked
+
+4. :nth-child(3)
+li:nth-child(3)  // Selects all 3d list item(s)
+5. :nth-child(odd)
+li:nth-child(odd) //Selects all odd list item(s)
+6. :nth-child(even)
+li:nth-child(even) //Selects all even list item(s)
+7. :nth-last-child(1)
+li:nth-last-child(1) //Selects all last item(s)
+8. :nth-of-type(odd)
+button:nth-of-type(odd) //Matches elements of a given tag type i.e. button
+
+9. :first-child
+[class*='btn']:first-child //Locate the 1st child element which contains 'btn' within the class attribute
+10. :last-child
+[class*='btn']:last-child
+
+
+
+
+
+XPATH Selectors:
+1. Absolute XPath
+/html/body/div[1]/div[3]/form/input
+2. Relative XPath
+//button[@id='sendMessageButton']
+
+Methods of XPATH Selectors:
+1. / - locates a child element
+//ul/li/a
+2. // - locates a descendant element
+//*[@id='list']//a
+
+XPATH Selectors - Descendant Selectors:
+1. //h1
+2. //div//p
+3. //div//ul/li
+4. //div//ul/li/a
+5. //tr//td
+6. //tr//*
+
+7. //div[@class='traversal-buttons']
+8. //div[@class='traversal-buttons']/a
+
+XPATH Selectors - Attribute Selectors:
+1. #id
+//*[@id='sendMessageButton'] - locate all elements which contain an id of "sendMessageButton"
+2. #id
+//button[@id='sendMessageButton'] - locate all button elements which contain an id of "sendMessageButton"
+3. .class
+//*[@class='form-control'] - locate all elements which contain a class of "form-control"
+
+4. //input[@required='required'] - locate input elements which contain an attribute of required and that attribute has
+a value of required
+5.  //input[@required='required'][@id='name'] - locate input elements which contain an attribute of required and that
+attribute has a value of required and the element must also have an id attribute which has a value of name
+6. //*[@required] - locate all elements which contain an attribute of required
+
+7. ^ Starts with
+//a[starts-with(@href, 'http://www.webdriver')] - locate all a tagged elements who's href attribute starts with the specific text
+8. contains
+//a[contains(@href, 'university.com')] - locate all a tagged elements who's href attribute contains specific text
+//h2[contains(@class,'page-section-heading text-center')]
+
+XPATH Selectors - Order Selectors:
+1. //ul/li[1]
+2. //ul/li[last()]
+3. //div[@class='progress'][1] - locate all elements based upon tag type (div), attribute (class) value and index number(s)
+
+XPATH Selectors - Sibiling(s) Selectors:
+1. //header/following-sibiling::section - locate all section elements which are a following sibiling to header element(s)
+2. //header/following-sibiling::section[1] - locate the 1st section elements which are a following sibiling to header element(s)
+3 //header/following-sibiling::section[@id='portfolio'] - locate all section elements which are a following sibiling to header element(s)
+and the section element(s) must have an id attribute which has the value of portfolio
+
+Other XPATH Selectors:
+1. not
+//section[not(@id='portfolio')] - locate all section elements apart from the section element which has an id of portfolio
+2. Text match
+//a[text()='Contact'] - locate all a tagged elements which have the text of "Contact"
+3. Text match (substring)
+//a[contains(text(), 'Play')] - locate all a tagged elements which contain the text of "Play"
+
+4. Arithmetic
+//div[@aria-valuenow > 74.00]
+5. Has children
+//ul[*]
+6. Has children (specific)
+//ul[li]
+
+7. Or logic
+//*[href or @aria-valuemaxnow]
+8. Union
+//a | //td
+
+XPATH Selectors - Indexing Selectors:
+1. //li[position()=2]
+2. //li[position()>2]
+3. //li[2]
